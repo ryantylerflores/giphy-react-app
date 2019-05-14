@@ -25,7 +25,7 @@ const Searchbar = (props) => {
   return (
     <div className='container my-5'>
       <div className='row'>
-        <form className='col-12' onSubmit={ onSubmitHandler }>
+        <form className='col-12 px-0' onSubmit={ onSubmitHandler }>
           <div className='form-group'>
             <input
               type='text' 
@@ -36,7 +36,7 @@ const Searchbar = (props) => {
             />
           </div>
         </form>
-        <div className='col-12 text-center'>
+        <div className='col-12 px-0 text-center'>
           <Button 
             text={`Search`} 
             actions={ fetchSearchHandler }
