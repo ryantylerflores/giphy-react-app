@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 
+// GET request to API for search results & assigns them to the store
 export const fetchSearchResults = payload => async dispatch => {
   await axios.get(`http://api.giphy.com/v1/gifs/search?q=${payload}&api_key=${API_KEY}&limit=30`)
     .then(response => {
@@ -20,6 +21,7 @@ export const fetchSearchResults = payload => async dispatch => {
     })
 }
 
+// Stores the previous search request parameter
 export const previousSearch = text => {
   return {
     type: 'PREVIOUS_SEARCH',
@@ -27,6 +29,7 @@ export const previousSearch = text => {
   }
 }
 
+// GET request to API for random GIF result
 export const fetchRandomResult = () => async dispatch => {
   await axios.get(`http://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`)
     .then(response => {

@@ -10,11 +10,14 @@ import './styles.css'
 
 
 const App = () => {
+  // Pulls API KEY
   const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 
+  // Local state for trending data & checks if data is loading
   const [trending, setTrending] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Sends call to API, checks for errors & handles data
   useEffect(() => {
     setIsLoading(true);
     axios.get(`http://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=15`)

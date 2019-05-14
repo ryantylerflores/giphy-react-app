@@ -4,12 +4,16 @@ import Button from './Button';
 import * as actions from '../actions/actions';
 
 const Searchbar = (props) => {
+
+  // local state for input field
   const [searchText, setSearchText] = useState('');
 
+  // Handles onChange event in input field
   const searchTextHandler = event => {
     setSearchText(event.target.value);
   }
 
+  // Handles submit action for form, fetches search results, stores what was just searched, and clears input field
   const onSubmitHandler = event => {
     event.preventDefault();
     props.fetchSearchResults(searchText);
@@ -17,6 +21,7 @@ const Searchbar = (props) => {
     setSearchText('');
   }
 
+  // fetches search result when button is used and clears input field
   const fetchSearchHandler = () => {
     props.fetchSearchResults(searchText);
     setSearchText('');

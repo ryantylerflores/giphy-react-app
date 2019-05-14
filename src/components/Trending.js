@@ -2,7 +2,11 @@ import React from 'react';
 import './styles.css';
 
 const Trending = (props) => {
+
+  // Loading screen if data hasn't populated
   const loading = <div className='row text-center'>Loading...</div>
+
+  // Maps through trending data and makes images for trending section
   const notLoading = <div className='img'>
                       { props.content.map((items,index) => {
                         return <img 

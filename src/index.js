@@ -7,7 +7,10 @@ import App from './components/App';
 import reducers from './reducers';
 import 'bootstrap/dist/css/bootstrap.css';
 
+// Allows you to view state changes using Redux Devtools in Chrome
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+// Creates store for redux
 const store = createStore(
   reducers,
   composeEnhancers(applyMiddleware(reduxThunk))

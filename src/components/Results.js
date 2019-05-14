@@ -3,14 +3,17 @@ import { connect } from 'react-redux';
 import './styles.css';
 
 const Results = (props) => {
-  // col-lg-4 col-md-6 col-sm-6 col-12
   
+  // If no data has been retrieved from search or random button fired, gives empty div
   if(!props.results && !props.random) {
     return <React.Fragment />
   } else {
     let searchResultContent;
     let randomResultContent;
+
+    // Checks if search data has been retrieved
     if(props.results) {
+      // If search is initiated with no data or API request fails, gives error screen
       if(props.results.data.data.length === 0 || props.results.data.meta.status !== 200){
         searchResultContent = <div className='pro-sans white'>
                                 <h2>
@@ -40,6 +43,8 @@ const Results = (props) => {
             </div>  
       }
     }
+
+    // renders content for random button being fired
     if(props.random) {
       randomResultContent = <div className='row'>
                               <div className='col-12 col-md-6'>
@@ -57,6 +62,7 @@ const Results = (props) => {
                             </div>
     }
 
+    // Checks if search or random actiom was fired & renders correct content
     let content = props.type === 'search' ? searchResultContent : randomResultContent;
 
     return(
