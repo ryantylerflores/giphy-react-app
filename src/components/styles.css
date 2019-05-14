@@ -1,0 +1,62 @@
+.btn-style {
+  border-radius: 20px !important;
+  /* width: 15rem; */
+}
+
+.sans-pro {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.input-style {
+  border-radius: 20px !important;
+}
+
+.scrolling-images {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.img {
+  display: inline-block;
+}
+
+.img-sizing {
+  position: relative;
+  /* float: left; */
+  width:  250px;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat:   no-repeat;
+  background-size:     cover;
+}
+
+.fit-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.AppBackground {
+  background-color: #333;
+  height: auto !important;
+  min-height: 100%;
+  width: 100%;
+}
+
+.white {
+  /* color: #777777; */
+  color: white;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.logo {
+  width: 80%
+}
+
+.search-section {
+  background-color: white
+}
