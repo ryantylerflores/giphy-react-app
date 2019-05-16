@@ -38,7 +38,7 @@ const Results = (props) => {
                   #{ props.previous } <span>{ props.results.data.data.length } search results</span>
                 </h2>
               </div>
-              <div className="row" style={{margin: '0 auto'}}>
+              <div className="row mx-auto">
               {/* <div className="col-12"> */}
                 <MasonryLayout
                   id="masonry-layout"
@@ -48,6 +48,7 @@ const Results = (props) => {
                   { props.results.data.data.map((item, index) => {
                     return (
                       <div
+                        id='result-img'
                         key={ index }
                         style={{
                           width: `200px`,
@@ -56,7 +57,7 @@ const Results = (props) => {
                           display: 'block',
                         }}
                       >
-                        <img alt={ item.title} className='my-2 mx-2' src={ item.images.fixed_width.url } />
+                        <img alt={ item.title} className='my-2 mx-2 rounded' src={ item.images.fixed_width.url } />
                       </div>
                     )}
                   ) }

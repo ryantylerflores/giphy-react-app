@@ -30,7 +30,7 @@ const Searchbar = (props) => {
   return (
     <div className='container my-5'>
       <div className='row'>
-        <form className='col-12 px-0' onSubmit={ onSubmitHandler }>
+        <form className='mx-auto col-11 col-sm-12 px-0' onSubmit={ onSubmitHandler }>
           <div className='form-group'>
             <input
               type='text' 
@@ -45,12 +45,12 @@ const Searchbar = (props) => {
           <Button 
             text={`Search`} 
             actions={ fetchSearchHandler }
-            classes='btn btn-outline-primary'
+            classes='btn search-btn'
           />
           <Button 
-            text={`I'm Feeling Lucky`} 
+            text={`Feeling Lucky?`} 
             actions={ () => props.fetchRandomResult() }
-            classes='btn btn-outline-success'
+            classes='btn lucky-button'
           />
         </div>
       </div>

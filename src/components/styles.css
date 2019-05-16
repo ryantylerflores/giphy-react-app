@@ -1,5 +1,6 @@
 h2 span {
   font-size: 18px;
+  font-weight: 200;
 }
 
 .btn-style {
@@ -32,7 +33,7 @@ h2 span {
 }
 
 .img-div img {
-  height: 35vh;
+  height: 40vh;
 }
 
 .img-sizing {
@@ -52,13 +53,13 @@ h2 span {
 
 .AppBackground {
   background-color: #333;
+  /* background-color: black; */
   height: auto !important;
   min-height: 100%;
   width: 100%;
 }
 
 .white {
-  /* color: #777777; */
   color: white;
 }
 
@@ -70,6 +71,28 @@ h2 span {
   width: 80%
 }
 
-.search-section {
-  background-color: white
+.search-btn {
+  /* background-color: #707070 !important; */
+  border: 1px solid white !important;
+  color: white !important;
+}
+
+.search-btn:hover {
+  background-color: #707070 !important;
+}
+
+.lucky-button {
+  /* background-color: #3EA055 !important; */
+  border: 1px solid #3EA055 !important;
+  color: #3EA055 !important;
+}
+
+.lucky-button:hover {
+  background-color: #3EA055 !important;
+  border: 1px solid #3EA055 !important;
+  color: white !important;
+}
+
+textarea:focus, input:focus {
+  border: 3px solid lightblue;
 }

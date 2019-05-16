@@ -22,7 +22,7 @@ const Trending = (props) => {
     <div className='container-fluid'>
       <div className='row'>
         <div>
-          <span className='white header-style'>
+          <span className='white header-style ml-5'>
             Popular Gifs of the Week.
           </span>
         </div>

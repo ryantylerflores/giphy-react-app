@@ -40,7 +40,7 @@ const App = () => {
   return (
     <div className='AppBackground'>
       <Header />
-      <div className='mt-3 container-fluid'>
+      <div className='mt-3 container-fluid px-0'>
         <Trending 
           content={ trending }
           isLoading={ isLoading }
