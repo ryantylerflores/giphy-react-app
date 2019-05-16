@@ -39,7 +39,6 @@ const Results = (props) => {
                 </h2>
               </div>
               <div className="row mx-auto">
-              {/* <div className="col-12"> */}
                 <MasonryLayout
                   id="masonry-layout"
                   infiniteScroll={ loadItems }
@@ -63,7 +62,6 @@ const Results = (props) => {
                   ) }
                 </MasonryLayout>
               </div>
-              {/* </div> */}
             </div>  
       }
     }
