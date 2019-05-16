@@ -14,7 +14,7 @@ h2 span {
 
 .header-style {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 4vw;
+  font-size: 38px;
 }
 
 .input-style {
@@ -95,4 +95,11 @@ h2 span {
 
 textarea:focus, input:focus {
   border: 3px solid lightblue;
+}
+
+@media only screen and (max-width: 800px) {
+  .header-style {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 27px;
+  }
 }
