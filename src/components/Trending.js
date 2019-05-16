@@ -7,7 +7,7 @@ const Trending = (props) => {
   const loading = <div className='row text-center'>Loading...</div>
 
   // Maps through trending data and makes images for trending section
-  const notLoading = <div className='img'>
+  const notLoading = <div className='img-div'>
                       { props.content.map((items,index) => {
                         return <img 
                           key={ index }
@@ -19,12 +19,12 @@ const Trending = (props) => {
                     </div>
 
   return (
-    <div className='container'>
+    <div className='container-fluid'>
       <div className='row'>
         <div>
-          <h2 className='white sans-pro'>
+          <span className='white header-style'>
             Popular Gifs of the Week.
-          </h2>
+          </span>
         </div>
         <div className='scrolling-images'>
           { props.isLoading ? loading : notLoading }

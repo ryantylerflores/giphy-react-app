@@ -1,3 +1,7 @@
+h2 span {
+  font-size: 18px;
+}
+
 .btn-style {
   border-radius: 20px !important;
   width: 155px;
@@ -5,6 +9,11 @@
 
 .sans-pro {
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header-style {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 4vw;
 }
 
 .input-style {
@@ -18,8 +27,12 @@
   cursor: pointer;
 }
 
-.img {
+.img-div {
   display: inline-block;
+}
+
+.img-div img {
+  height: 35vh;
 }
 
 .img-sizing {

@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { connect } from 'react-redux';
+import MasonryLayout from 'react-masonry-layout';
 import './styles.css';
 
 const Results = (props) => {
+
+  console.log(props)
+
+  const [perPage, setPerPage] = useState(10);
+  const [items, setItems] = useState(Array(20).fill());
+
+  const loadItems = () => {
+    setItems(items.concat(Array(perPage).fill()));
+  }
   
   // If no data has been retrieved from search or random button fired, gives empty div
   if(!props.results && !props.random) {
@@ -23,23 +33,36 @@ const Results = (props) => {
       } else {
         searchResultContent =  
             <div className='row'>
-              <div className='mx-3 pro-sans white'>
+              <div className='ml-5 pro-sans white'>
                 <h2>
-                  #{ props.previous }
+                  #{ props.previous } <span>{ props.results.data.data.length } search results</span>
                 </h2>
-                <span className='ml-2'>
-                  { props.results.data.data.length } search results
-                </span>
               </div>
-              <div className='row text-center'>
-                { props.results.data.data.map((item,index) => {
-                  return(
-                    <div key={ index } className='col-12 col-sm-6 col-md-4 col-lg-3'>
-                      <img alt={ item.title} className='my-2 mx-2 fit-image rounded' src={ item.images.fixed_width.url } />
-                    </div>)
-                  })
-                }
+              <div className="row" style={{margin: '0 auto'}}>
+              {/* <div className="col-12"> */}
+                <MasonryLayout
+                  id="masonry-layout"
+                  infiniteScroll={ loadItems }
+                  sizes={[ { columns: 1, gutter: 20 }, { mq: '500px', columns: 2, gutter: 20 }, { mq: '700px', columns: 3, gutter: 20 }, { mq: '900px', columns: 4, gutter: 20 }, {mq: '1100px', columns: 5, gutter: 20 }, { mq: '1300px', columns: 6, gutter: 20 } ]}
+                >
+                  { props.results.data.data.map((item, index) => {
+                    return (
+                      <div
+                        key={ index }
+                        style={{
+                          width: `200px`,
+                          height: `${ item.images.fixed_width.height }px`,
+                          lineHeight: `${ item.images.fixed_width.height }px`,
+                          display: 'block',
+                        }}
+                      >
+                        <img alt={ item.title} className='my-2 mx-2' src={ item.images.fixed_width.url } />
+                      </div>
+                    )}
+                  ) }
+                </MasonryLayout>
               </div>
+              {/* </div> */}
             </div>  
       }
     }
@@ -66,7 +89,7 @@ const Results = (props) => {
     let content = props.type === 'search' ? searchResultContent : randomResultContent;
 
     return(
-      <div className='pb-4 container'>
+      <div className='pb-4 container-fluid'>
         { content }
       </div>
     )
